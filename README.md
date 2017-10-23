@@ -1,0 +1,1 @@
+# Dùng để đọc Text ENG ( only ) thành tiếng.
