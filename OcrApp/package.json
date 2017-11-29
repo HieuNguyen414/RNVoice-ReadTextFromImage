@@ -9,7 +9,9 @@
   "dependencies": {
     "react": "16.0.0-beta.5",
     "react-native": "0.49.3",
+    "react-native-camera": "^0.10.0",
     "react-native-image-picker": "^0.26.7",
+    "react-native-qrcode": "^0.2.6",
     "react-native-tesseract-ocr": "^1.0.8"
   },
   "devDependencies": {

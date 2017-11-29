@@ -1,15 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import RNTesseractOcr from 'react-native-tesseract-ocr';
 import { Image, Platform, PixelRatio, StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 var Button = (Platform.OS === 'android') ? TouchableNativeFeedback : TouchableOpacity;
-export default class App extends Component<{}> {
+
+export default class App extends Component{
   constructor(props, context){
    super(props, context);
    this.state = { imgSource: null, ocrResult: null };
@@ -67,7 +63,7 @@ export default class App extends Component<{}> {
         <Button onPress={this.selectPhoto.bind(this)} >
           <View style={[styles.img, styles.imgContainer, {marginBottom: 20}]}>
           { this.state.imgSource === null ? <Text>Select a Photo</Text> :
-            <Image style={styles.img} source={this.state.imgSource} />
+            <Image source={this.state.imgSource} />
           }
           </View>
         </Button>
@@ -78,22 +74,11 @@ export default class App extends Component<{}> {
   }
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });

@@ -1,3 +1,5 @@
+// link: https://github.com/mihirsoni/react-native-android-speech
+
 import React, { Component } from 'react';
 import {
   Platform,
@@ -6,34 +8,26 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
-var tts = require('react-native-android-speech')
-
+var Speech = require('react-native-android-speech')
 import Voice from 'react-native-voice';
-export default class App extends Component<{}> {
-  constructor(props) {
-    super(props);
-  }
-  test() {
-    tts.speak({
-    text:'Please provide some text to speak.', // Mandatory
-    pitch:1.5, // Optional Parameter to set the pitch of Speech,
-    forceStop : false , //  Optional Parameter if true , it will stop TTS if it is already in process
-    language : 'en', // Optional Paramenter Default is en you can provide any supported lang by TTS
-    country : 'US' // Optional Paramenter Default is null, it provoques that system selects its default
-    }).then(isSpeaking=>{
-        console.log(isSpeaking);
-    }).catch(error=>{
-        //Errror Callback
-        console.log(error)
-    });
+
+export default class App extends Component{
+
+  speaktest() {
+    Speech.speak({
+    text:'Nguyễn Chánh Hiếu',
+    pitch:1.5,
+    forceStop : false ,
+    language : 'vi',
+    country : 'Vietnamese'
+    })
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text >Voice</Text>
         <TouchableOpacity
-           onPress={ () => this.test() }>
-           <Text >Voice Click</Text>
+           onPress={ () => this.speaktest() }>
+           <Text >Speak</Text>
         </TouchableOpacity>
       </View>
     );
